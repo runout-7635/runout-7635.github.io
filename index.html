@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Runout</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="hero">
+    <h1><em>Runout</em>.nl</h1>
+  </div>
+
+  <div class="scroll-hint" id="scrollHint">Scroll</div>
+
+  <div class="buttons" id="buttons">
+    <a href="mailto:contact@runout.nl" class="btn">E-mail</a>
+    <a href="https://www.linkedin.com/in/linkrs/" class="btn" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+
+  <script>
+    const buttons    = document.getElementById('buttons');
+    const scrollHint = document.getElementById('scrollHint');
+
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY > 80;
+      buttons.classList.toggle('visible', scrolled);
+      scrollHint.classList.toggle('hidden', scrolled);
+    });
+  </script>
+
+</body>
+</html>
