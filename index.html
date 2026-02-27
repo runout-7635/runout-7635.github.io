@@ -15,20 +15,28 @@
   <div class="scroll-hint" id="scrollHint">Scroll</div>
 
   <div class="buttons" id="buttons">
-    <a href="mailto:contact@runout.nl" class="btn">E-mail</a>
+    <a href="#" class="btn" id="mailBtn">E-mail</a>
     <a href="https://www.linkedin.com/in/linkrs/" class="btn" target="_blank" rel="noopener">LinkedIn</a>
   </div>
 
-  <script>
-    const buttons    = document.getElementById('buttons');
-    const scrollHint = document.getElementById('scrollHint');
+<script>
+  const buttons    = document.getElementById('buttons');
+  const scrollHint = document.getElementById('scrollHint');
+  const mailBtn    = document.getElementById('mailBtn');
 
-    window.addEventListener('scroll', () => {
-      const scrolled = window.scrollY > 80;
-      buttons.classList.toggle('visible', scrolled);
-      scrollHint.classList.toggle('hidden', scrolled);
-    });
-  </script>
+  const u = 'contact';
+  const d = 'runout.nl';
+  mailBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.href = 'mailto:' + u + '@' + d;
+  });
+
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY > 80;
+    buttons.classList.toggle('visible', scrolled);
+    scrollHint.classList.toggle('hidden', scrolled);
+  });
+</script>
 
 </body>
 </html>
